@@ -54,7 +54,7 @@ export const calculatePropertyValue = (input: PropertyCalculationInput) => {
     else if (num === 2) bhkMultiplier = 1.1;
     else if (num === 3) bhkMultiplier = 1.25;
     else if (num === 4) bhkMultiplier = 1.45;
-    else bhkMultiplier = 1.65;
+    else bhkMultiplier = 1.65 + (num - 5) * 0.20;
   }
 
   // Base Formula: Size * (Locality Avg + City Avg) * Type_Multiplier * Furnishing_Multiplier * BHK_Multiplier
