@@ -23,13 +23,13 @@ export default function App() {
           ></div>
           
           <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="w-10 h-10 md:w-14 md:h-14">
-                <Vector />
-              </div>
-              <h1 className="text-4xl md:text-6xl font-extrabold text-white tracking-tight">
-                BrixEstimator
-              </h1>
+            <div className="mb-6">
+              <h1 className="sr-only">Brix Estimate</h1>
+              <img 
+                src="/estimate-logo.png" 
+                alt="Brix Estimate Logo" 
+                className="h-12 sm:h-16 md:h-20 w-auto object-contain mx-auto"
+              />
             </div>
             <p className="text-lg md:text-xl text-blue-100/80 max-w-2xl mx-auto leading-relaxed">
               Estimate the market value of your property in seconds. 

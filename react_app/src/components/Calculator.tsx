@@ -50,7 +50,7 @@ export function PropertyCalculator() {
         animate={{ opacity: 1, y: 0 }}
         className="relative px-4 -mt-20 z-10 pb-20"
       >
-        <div className="max-w-4xl bg-gray-100 p-3 rounded-2xl mx-auto shadow-2xl">
+        <div className="max-w-4xl bg-gray-100 p-3 rounded-[1.44rem] mx-auto shadow-2xl">
           <div className="bg-white rounded-xl overflow-hidden shadow-sm">
             {/* Header */}
             <div className="p-8 border-b border-gray-50 bg-gray-50/50">
@@ -114,6 +114,9 @@ export function PropertyCalculator() {
             </div>
           </div>
         </div>
+        <p className="text-center text-sm text-gray-400/70 mt-4 tracking-wide">
+          Built with ❤️ love by Brixliners
+        </p>
       </motion.div>
     );
   }
@@ -124,7 +127,7 @@ export function PropertyCalculator() {
       animate={{ opacity: 1, y: 0 }}
       className="relative px-4 -mt-20 z-10 pb-20"
     >
-      <div className="max-w-4xl bg-gray-100 p-3 rounded-2xl mx-auto shadow-2xl">
+      <div className="max-w-4xl bg-gray-100 p-3 rounded-[1.44rem] mx-auto shadow-2xl">
         <div className="bg-white rounded-xl p-8 md:p-10 space-y-10">
           <div className="grid md:grid-cols-2 gap-10">
             {/* Left Column */}
@@ -256,6 +259,9 @@ export function PropertyCalculator() {
           </button>
         </div>
       </div>
+      <p className="text-center text-sm text-gray-400/70 mt-4 tracking-wide">
+        Built with ❤️ love by Brixliners
+      </p>
     </motion.div>
   );
 }
