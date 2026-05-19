@@ -45,15 +45,11 @@ export const calculatePropertyValue = (input: PropertyCalculationInput) => {
   const typeMultiplier = PROPERTY_TYPE_MULTIPLIERS[input.propertyType as keyof typeof PROPERTY_TYPE_MULTIPLIERS] || 1.0;
   const furnishingMultiplier = FURNISHING_MULTIPLIERS[input.furnishing as keyof typeof FURNISHING_MULTIPLIERS] || 1.0;
   
-  // Apply BHK Multiplier
+  // Apply BHK Multiplier robustly
   let bhkMultiplier = 1.0;
-  if (input.bedrooms.includes("BHK")) {
-    const key = input.bedrooms.endsWith("+") ? input.bedrooms : (input.bedrooms.length === 5 ? input.bedrooms : `${input.bedrooms}`);
-    // Match keys like "1 BHK", "2 BHK", etc.
-    bhkMultiplier = BHK_MULTIPLIERS[input.bedrooms as keyof typeof BHK_MULTIPLIERS] || 1.0;
-  } else if (!isNaN(parseInt(input.bedrooms))) {
-    // Manual override handling
-    const num = parseInt(input.bedrooms);
+  const bhkMatch = input.bedrooms.match(/(\d+)/);
+  if (bhkMatch) {
+    const num = parseInt(bhkMatch[1]);
     if (num === 1) bhkMultiplier = 1.0;
     else if (num === 2) bhkMultiplier = 1.1;
     else if (num === 3) bhkMultiplier = 1.25;

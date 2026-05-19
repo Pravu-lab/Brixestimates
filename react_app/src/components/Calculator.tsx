@@ -26,6 +26,7 @@ export function PropertyCalculator() {
     formData.locality && 
     formData.propertyType && 
     formData.bedrooms && 
+    formData.bedrooms.trim() !== "" &&
     formData.size && 
     formData.size > 0 &&
     formData.furnishing;
