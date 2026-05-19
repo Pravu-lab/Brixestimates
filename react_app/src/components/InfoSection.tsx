@@ -3,13 +3,11 @@ export function InfoSection() {
     <div className="bg-[#F5F5F5] py-16 px-6 border-t border-gray-200">
       <div className="max-w-4xl mx-auto space-y-12">
         <div className="space-y-8">
-          <div className="flex items-center justify-center gap-3">
-            <img 
-              src="/understanding-icon.png" 
-              alt="Brix Estimate Icon" 
-              className="w-8 h-8 object-contain"
-            />
-            <h2 className="text-3xl font-bold text-gray-900">Understanding BrixEstimate</h2>
+          <div className="flex w-full flex-col items-center justify-center gap-2 text-center sm:flex-row sm:gap-3">
+            <span className="text-3xl leading-none" role="img" aria-label="Rocket">
+              🚀
+            </span>
+            <h2 className="max-w-md text-3xl font-bold text-gray-900 sm:max-w-none">Understanding BrixEstimate</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

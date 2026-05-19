@@ -9,6 +9,7 @@ import {
   calculatePropertyValue, 
   formatINR 
 } from './calculatorData';
+import { ProfileAvatarStack } from './ProfileAvatarStack';
 
 export function PropertyCalculator() {
   const [showResults, setShowResults] = useState(false);
@@ -48,9 +49,9 @@ export function PropertyCalculator() {
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="relative px-4 -mt-20 z-10 pb-20"
+        className="relative z-10 mt-6 px-4 pb-20"
       >
-        <div className="max-w-4xl bg-gray-100 p-3 rounded-[1.44rem] mx-auto shadow-2xl">
+        <div className="max-w-4xl bg-gray-100 p-3 rounded-[2.016rem] mx-auto shadow-2xl">
           <div className="bg-white rounded-xl overflow-hidden shadow-sm">
             {/* Header */}
             <div className="p-8 border-b border-gray-50 bg-gray-50/50">
@@ -61,16 +62,33 @@ export function PropertyCalculator() {
               <p className="mt-2 text-gray-500 font-medium">
                 {formData.size} sq.ft. | {formData.furnishing} | For {formData.intention}
               </p>
+
+              <div className="relative mt-4 w-fit max-w-full">
+                <div
+                  className="absolute inset-0 rounded-l-full"
+                  style={{
+                    background: 'linear-gradient(to right, #EAF3FF 0%, #F4F9FF 55%, #ffffff 100%)',
+                  }}
+                  aria-hidden
+                />
+                <div className="relative flex items-center py-2.5 pl-4 pr-6">
+                  <img
+                    src="/predicted-using-brixline-ai.png"
+                    alt="Predicted using Brixline AI"
+                    className="h-7 w-auto max-w-[min(100%,280px)] object-contain object-left"
+                  />
+                </div>
+              </div>
             </div>
 
             {/* Price Body */}
             <div className="p-8 md:p-12 text-center space-y-10">
               <div className="space-y-3">
                 <p className="text-gray-400 font-bold uppercase tracking-[0.2em] text-[10px]">Estimated {formData.intention === 'Sell' ? 'Property Value' : 'Monthly Rent'}</p>
-                <div className="text-4xl md:text-6xl font-black text-gray-900 flex flex-wrap items-center justify-center gap-4">
-                  <span className="text-[#2771DD]">{formatINR(min)}</span>
-                  <span className="text-gray-200 font-light">-</span>
-                  <span className="text-[#2771DD]">{formatINR(max)}</span>
+                <div className="flex flex-nowrap items-center justify-center gap-2 text-2xl font-black text-gray-900 sm:gap-3 sm:text-4xl md:gap-4 md:text-6xl">
+                  <span className="shrink-0 whitespace-nowrap text-[#2771DD]">{formatINR(min)}</span>
+                  <span className="shrink-0 text-gray-200 font-light">-</span>
+                  <span className="shrink-0 whitespace-nowrap text-[#2771DD]">{formatINR(max)}</span>
                 </div>
               </div>
 
@@ -99,10 +117,8 @@ export function PropertyCalculator() {
                 </div>
               </div>
 
-              <div className="pt-4 space-y-4">
-                <button className="w-full py-4 bg-black text-white rounded-xl font-bold text-lg transition-all hover:scale-[1.01] active:scale-[0.99] shadow-xl shadow-black/10">
-                  Contact Us: +91 8073209672
-                </button>
+              <div className="flex flex-col items-center gap-4 pt-4">
+                <ProfileAvatarStack />
                 <button 
                   onClick={() => setShowResults(false)}
                   className="flex items-center gap-2 mx-auto text-gray-500 font-bold text-sm hover:text-black transition-colors"
@@ -125,9 +141,9 @@ export function PropertyCalculator() {
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="relative px-4 -mt-20 z-10 pb-20"
+      className="relative z-10 mt-6 px-4 pb-20"
     >
-      <div className="max-w-4xl bg-gray-100 p-3 rounded-[1.44rem] mx-auto shadow-2xl">
+      <div className="max-w-4xl bg-gray-100 p-3 rounded-[2.016rem] mx-auto shadow-2xl">
         <div className="bg-white rounded-xl p-8 md:p-10 space-y-10">
           <div className="grid md:grid-cols-2 gap-10">
             {/* Left Column */}
@@ -135,7 +151,7 @@ export function PropertyCalculator() {
               <div className="space-y-4">
                 <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">I want to</label>
                 <div className="flex gap-2">
-                  {["Sell", "Rent"].map((type) => (
+                  {["Sell"].map((type) => (
                     <button
                       key={type}
                       type="button"

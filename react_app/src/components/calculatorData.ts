@@ -3,9 +3,13 @@ export const CITY_DATA = {
 };
 
 export const LOCALITY_DATA = {
-  "Yelahanka": 5000,
-  "Whitefield": 6500,
-  "Indiranagar": 12000
+  "Yelahanka": 2500,
+  "Whitefield": 2500,
+  "Indiranagar": 2500,
+  "Koramangala": 2500,
+  "HSR": 2500,
+  "BTM": 2500,
+  "Bommanahalli": 2500,
 };
 
 export const PROPERTY_TYPE_MULTIPLIERS = {

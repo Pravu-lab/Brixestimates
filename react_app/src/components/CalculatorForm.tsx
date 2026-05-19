@@ -47,7 +47,7 @@ export function CalculatorForm() {
         <div className="space-y-4">
           <label className="text-sm font-bold text-gray-900 uppercase tracking-wider">I want to</label>
           <div className="flex gap-3">
-            {["Sell", "Rent"].map((type) => (
+            {["Sell"].map((type) => (
               <button
                 key={type}
                 type="button"
